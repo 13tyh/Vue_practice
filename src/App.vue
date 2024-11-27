@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, computed, watchEffect } from 'vue'
+import { ref, reactive, computed, watchEffect, watch } from 'vue'
 
 let price = ref(100)
 //refは値を保持するためのもの
@@ -38,12 +38,25 @@ const userInput = ref('')
 const evaluation = computed(() => {
   return count.value > 5 ? 'long' : 'short'
 })
+watch(count, (newValue, oldValue) => {
+  console.log('count:', newValue)
+  console.log('oldCount:', oldValue)
+})
+//watchは第一引数に監視対象、第二引数にコールバック関数を取る
+//第二引数には監視対象の値が変更された時に実行される処理を書く
+//個別監視できる,新しい値と古い値を取得できる
+//第一引数には.valueをつけない
+//リアクティブオブジェクトは扱い方気をつける
+//第一引数にアロー関数を入れた場合は,その処理はwatchEffectと同じになる
+//複数のデータを監視したときは配列で渡す
+//第3引数のオブジェクトにimmediateオプションを使うことで初期値を取得できる
 
 watchEffect(() => {
   console.log('count:', count.value)
 })
 //computedとほぼ同じ
 //監視対象は関数内の値
+//非同期処理は監視できない
 </script>
 <template>
   <h1>price: {{ price }}</h1>
