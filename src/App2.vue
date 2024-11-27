@@ -1,4 +1,4 @@
-<script setup>
+<script setup name="App2">
 import { ref } from 'vue'
 const msg = ref('<h1>helloworld</h1>')
 const vueURL = ref('https://v3.vuejs.org/')
