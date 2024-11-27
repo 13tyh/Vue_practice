@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, watchEffect } from 'vue'
 
 let price = ref(100)
 //refは値を保持するためのもの
@@ -38,6 +38,12 @@ const userInput = ref('')
 const evaluation = computed(() => {
   return count.value > 5 ? 'long' : 'short'
 })
+
+watchEffect(() => {
+  console.log('count:', count.value)
+})
+//computedとほぼ同じ
+//監視対象は関数内の値
 </script>
 <template>
   <h1>price: {{ price }}</h1>
@@ -88,5 +94,7 @@ const evaluation = computed(() => {
     <p>{{ evaluation }}</p>
     // computedプロパティは関数内の値が変更された時に再度実行される //
     そのため、countの値が変更された時にevaluationの値も変更される
+    //computedは読み取り専用のデータを返す //外部の状態を更新する処理や非同期処理は避ける
+    //temとcomputedはリアクティブエフェクトを使っている //処理をまとめたいときはcomputedを使う
   </div>
 </template>
