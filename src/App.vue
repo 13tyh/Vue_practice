@@ -86,6 +86,7 @@ const evaluation = computed(() => {
 
   <div>
     <p>{{ evaluation }}</p>
-    // computedプロパティ
+    // computedプロパティは関数内の値が変更された時に再度実行される //
+    そのため、countの値が変更された時にevaluationの値も変更される
   </div>
 </template>
