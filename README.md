@@ -1,5 +1,3 @@
-# Udemyで学んでいるVueのアウトプット記録
+# Vue勉強記録
 
 # vue-project
-
-
