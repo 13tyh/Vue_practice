@@ -57,6 +57,8 @@ watchEffect(() => {
 //computedとほぼ同じ
 //監視対象は関数内の値
 //非同期処理は監視できない
+
+const className = ref('red')
 </script>
 <template>
   <h1>price: {{ price }}</h1>
@@ -110,4 +112,18 @@ watchEffect(() => {
     //computedは読み取り専用のデータを返す //外部の状態を更新する処理や非同期処理は避ける
     //temとcomputedはリアクティブエフェクトを使っている //処理をまとめたいときはcomputedを使う
   </div>
+
+  <div :class="{ red: true, 'bg-blue': true }">Hello</div>
+  //動的なクラスの書き方 //オブジェクトを使うことで条件分岐ができる
+  <div :class="[className]" :style="{ color: 'red', backgroundColor: 'blue' }">Hello</div>
+  //配列を使うことで複数のクラスを適用できる
+  //styleはオブジェクトを使うことで複数のスタイルを適用できる //styleはキャメルケースで書く
 </template>
+<style>
+.red {
+  color: red;
+}
+.bg-blue {
+  background-color: blue;
+}
+</style>
