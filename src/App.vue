@@ -30,7 +30,8 @@ const fruits = ref(['apple', 'banana', 'cherry'])
 
   <template>
     <li v-for="fruit in fruits" :key="fruit">{{ fruit }}</li>
-    // v-forで配列の中身を表示する // :key="fruit"でユニークなkeyを指定する
+    // v-forで配列の中身を表示する // :key="fruit"でユニークなkeyを指定する //
+    appleが被ったら行けないので、ユニークなkeyを指定する(オブジェクトにしてidなど)
   </template>
 </template>
 <style></style>
