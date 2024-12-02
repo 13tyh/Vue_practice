@@ -29,9 +29,13 @@ const fruits = ref(['apple', 'banana', 'cherry'])
   処理が早いので、頻繁に表示非表示を切り替える場合はv-showを使う
 
   <template>
-    <li v-for="fruit in fruits" :key="fruit">{{ fruit }}</li>
+    <li v-for="(fruit, index) in fruits" :key="fruit">
+      //indexをkey属性にするのは非推奨 // key属性はユニークな値を指定する //
+      <input type="text">{{ fruit }},{{ index }}</input>
+    </li>
     // v-forで配列の中身を表示する // :key="fruit"でユニークなkeyを指定する //
     appleが被ったら行けないので、ユニークなkeyを指定する(オブジェクトにしてidなど)
+    // ({})の中だと分割代入ができる
   </template>
 </template>
 <style></style>
