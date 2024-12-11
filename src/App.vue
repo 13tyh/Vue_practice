@@ -1,10 +1,14 @@
 <script setup>
 import { ref } from 'vue'
-import ShowCount from './components/ShowCount.vue'
+import ResetButton from './components/ResetButton.vue'
 const count = ref(0)
+// function onReset(value) {
+// count.value = value
+// }
 </script>
 <template>
-  <ShowCount :foo="count" bar="hello" />
-  {/* propsの命名規則はケバブケース */}
+  <p>count: {{ count }}</p>
   <button @click="count++">+1</button>
+  <ResetButton @reset="count = $event" />
+  <!-- <ResetButton @reset="onReset" /> -->
 </template>
