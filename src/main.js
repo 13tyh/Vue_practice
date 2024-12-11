@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import BaceIcon from '@/components/BaseIcon.vue'
+import 'asserts/main.css'
 
 const app = createApp(App)
 app.component('BaseIcon', BaceIcon).component('BaseIcon', BaceIcon)

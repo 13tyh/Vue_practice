@@ -18,4 +18,9 @@ import CountUp from '@/components/CountUp.vue'
   // $attrsは親コンポーネントから受け取った属性をそのまま子コンポーネントに渡す //
   v-bindで属性をバインドする
 </template>
-<style></style>
+<style scoped>
+.red {
+  color: red;
+}
+{/* scopedを使うことでcssの適応範囲を変えることができる  */}
+</style>
