@@ -6,5 +6,7 @@ import CountUp from './CountUp.vue'
   <CountUp></CountUp>
   // 別々にカウントアップする // 閉じタグも可能 //
   ファイル名はパスカルケースで書く-ケバブケースも一応OK // 2単語以上で書く //
+
+  <BaseIcon />
 </template>
 <style></style>
