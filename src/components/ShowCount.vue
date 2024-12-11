@@ -1,11 +1,11 @@
 <script setup>
-const props = defineProps(['foo', 'bar'])
-// const { foo, bar } = defineProps(['foo', 'bar'])
-//この書き方でも良い（分割代入）
-console.log(props.foo)
-// propsは読み取り専用なので、以下のような書き方はできない
-// props.foo = 10
-// 親コンポーネントでpropsを更新する
+defineProps({
+  foo: { Number, default: 100 },
+  bar: { String, required: true },
+}) // デフォルトとrequiredを設定することができる
+// 配列とオブジェクトの時だけは、defaultを使うことができない
+// typeがbooleanの時は、undefinedを設定することができず、trueになる
+// データがないときはfalseになる
 </script>
 
 <template>
