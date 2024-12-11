@@ -1,8 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import CountUp from './CountUp.vue'
 </script>
 <template>
-  <p v-for="n in 10" :key="n">{{ n }}</p>
-  // indexが0スタートではなく1スタートになる
+  <CountUp />
+  <CountUp></CountUp>
+  // 別々にカウントアップする // 閉じタグも可能 //
+  ファイル名はパスカルケースで書く-ケバブケースも一応OK // 2単語以上で書く //
 </template>
 <style></style>
