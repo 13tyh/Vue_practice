@@ -1,9 +1,11 @@
-<script setup></script>
+<script setup>
+import { shallowRef } from 'vue'
+
+const currentComp = shallowRef(CompA)
+</script>
 <template>
-  <h1>Slots</h1>
-  //スロットはテンプレート構文で書いた要素を渡すことができる //
-  親コンポーネントに要素を書き、子コンポーネントにslotタグを書く //
-  データはそのコンポーネント内でしか使えない //
-  スロット内で書いたものはフォールバックコンテンツと言う // デフォルトで表示されるコンテンツ //
-  v-slot:をtemタグに書くことで、スロット名を指定できる、もしくは＃ //
+  <h1>動的コンポーネント</h1>
+  <component :is="currentComp" />
+  // ボタンをクリックするとcurrentComponentの値が変わる // 例：タブの切り替え //
+  shallowRefを使ってcurrentComponentの値を変更する // パフォーマンスがrefよりも良い
 </template>
